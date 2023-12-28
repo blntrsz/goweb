@@ -9,7 +9,8 @@ func main() {
 	app := echo.New()
 
 	userHandler := handler.UserHandler{}
-	app.GET("/user", userHandler.HandleUserShow)
+	app.File("/tailwind.css", "tailwind.css")
+	app.GET("/", userHandler.HandleUserShow)
 
 	app.Start(":3000")
 }
